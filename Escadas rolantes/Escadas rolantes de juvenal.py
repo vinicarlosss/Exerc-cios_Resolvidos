@@ -15,12 +15,17 @@ contador = 1
 while True:                 #repetição para calcular o tempo que a escada se mantém ligada.
     try:
 
-        for e in sensor:               #laço for em cada elemento do array sensor
+        for e in sensor:
 
             modulo = sensor[contador] - e  # a variável modulo calcula a distância entre os módulos de cada elemento do array sensor
-            contador += 1           #incrementa 1 no contador fazendo com que na próxima iteração o modulo seja calculado com o próximo elemento do array sensor
-            tempo += modulo         #é incrementado a distância entre os módulos de cada elementos da lista na variável tempo para indicar o tempo que a escada está funcionando
 
+            if modulo <= 10:
+                contador += 1           #incrementa 1 no contador fazendo com que na próxima iteração o modulo seja calculado com o próximo elemento do array sensor
+                tempo += modulo         #é incrementado a distância entre os módulos de cada elementos da lista na variável tempo para indicar o tempo que a escada está funcionando
+
+            else:
+                contador += 1
+                tempo += 10
     except:       #quando o contador excede o número de indíces do array sensor ele parte para a excessão
         tempo += 10        #incrimenta os primeiros 10 segundos de quando a primeira pessoa passou pelo sensor
         print(tempo)
