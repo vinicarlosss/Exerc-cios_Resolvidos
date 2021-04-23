@@ -1,21 +1,24 @@
-def quicksort(V):
-    if len(V) <= 1:
-        return V
+def somatorio(n):
+    if n == 1:
+        return 1
+    else:
+        return n + somatorio(n-1)
 
-    pivot = V[0]
-    equal = [x for x in V if x == pivot]
-    lesser = [x for x in V if x < pivot]
-    greater = [x for x in V if x > pivot]
-    return quicksort(lesser) + equal + quicksort(greater)
+def somatoriob(lista):
+    soma = 0
+    for e in lista:
+        soma += e
+    return soma
 
 
-numero = int(input())
-V = [int(numero) for numero in input().split()]
-quicksort(V)
-for e in range (1,numero+1):
-    if e not in V:
-        print(e)
-        break
+n = int(input())
+lista = [int(numero) for numero in input().split()]
+
+print(somatorio(n)-somatoriob(lista))
+
+
+
+
 
 
 
