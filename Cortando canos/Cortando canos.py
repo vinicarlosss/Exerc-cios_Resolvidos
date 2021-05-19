@@ -5,8 +5,9 @@ def maximovalor(i,tamanhomaximo,comprimentovalor,numero):
     tamanhoCorte = 0
     for e in range(numero):
         if (tamanhoCorte + comprimentovalor[i][0]) > tamanhomaximo:
-            break
-        elif comprimentovalor[i][0]<= tamanhomaximo:
+            i += 1
+            continue
+        else:
             tamanhoCorte += comprimentovalor[i][0]
             resposta += comprimentovalor[i][1]
             i += 1
