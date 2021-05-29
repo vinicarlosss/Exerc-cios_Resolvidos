@@ -15,13 +15,14 @@ def mochila(i,j,comprimentoValor):
                     else:
                         resultado = defineMaximo(t[linha-1][coluna], t[linha-1][coluna-comprimentoValor[linha-1][0]] + comprimentoValor[linha-1][1])
 
-                        if resultado > 0 and resultado > t[linha-1][coluna]:
+                        if resultado > 0 and resultado >= t[linha-1][coluna]:
                             t[linha].append(0)
                             corte_de_cano = coluna
+                            valor_cano = 0
                             while corte_de_cano >= comprimentoValor[linha-1][0]:
                                 corte_de_cano -= comprimentoValor[linha-1][0]
-                                t[linha][coluna] += comprimentoValor[linha-1][1]
-
+                                valor_cano += comprimentoValor[linha-1][1]
+                            t[linha][coluna] = defineMaximo(valor_cano, t[linha-1][coluna])
                         else:
                             t[linha].append(resultado)
 
