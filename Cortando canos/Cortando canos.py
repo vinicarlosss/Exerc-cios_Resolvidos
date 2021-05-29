@@ -17,12 +17,12 @@ def mochila(i,j,comprimentoValor):
     return t[i][j]
 
 
-def defineMaximo(termoA, termoB):
+def defineMaximo(x, y):
 
-    if termoA > termoB:
-        return termoA
-    else:
-        return termoB
+    if x > y:
+        return x
+
+    return y
 
 
 numero, tamanhoMaximo = [int(e) for e in input().split()]
