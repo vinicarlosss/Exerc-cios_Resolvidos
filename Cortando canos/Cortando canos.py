@@ -14,9 +14,8 @@ def mochila(i,j,comprimentoValor):
                         t[linha].append(t[linha-1][coluna])
                     else:
                         t[linha].append(defineMaximo(t[linha-1][coluna], t[linha-1][coluna-comprimentoValor[linha-1][0]] + comprimentoValor[linha-1][1]))
-
-
     return t[i][j]
+
 
 def defineMaximo(termoA, termoB):
 
@@ -24,8 +23,6 @@ def defineMaximo(termoA, termoB):
         return termoA
     else:
         return termoB
-
-
 
 
 numero, tamanhoMaximo = [int(e) for e in input().split()]
